@@ -77,4 +77,25 @@ def rating(request,id):
         form = VoteForm()
     return render(request,'users/vote.html',{'form':form,'project':project,'rating':rating})    
 
+@login_required(login_url='/accounts/login/')
+def new_comment(request, project_id):
+    current_user = request.user
+    project = Project.objects.get(id=project_id)
+    profile = Profile.objects.filter(user=current_user.id).first()
+    if request.method == 'POST':
+        form=NewCommentForm(request.POST, request.FILES)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.user = current_user
+            comment.project=project
+            comment.save()
+            
+            return redirect('welcome')
+
+    else:
+        form = NewCommentForm()
+
+    return render(request, 'users/new_comment.html', {'form': form,'profile':profile, 'project':project, 'project_id':project_id})
+
+
 
