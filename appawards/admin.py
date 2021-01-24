@@ -21,3 +21,5 @@ class MyUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
 
+admin.site.unregister(User)
+admin.site.register(User, UserAdmin)
