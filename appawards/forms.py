@@ -13,3 +13,8 @@ class NewCommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         exclude = ['user','project']
+
+class VoteForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ('design','usability','content')
