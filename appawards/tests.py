@@ -54,5 +54,31 @@ class CommentTestClass(TestCase):
         self.new_comment.delete_comment()
         self.assertEqual(len(Comment.objects.all()),0)
  
+class ProfileTestClass(TestCase):
+    def setUp(self):
+        self.new_user=User(id=1,username='Steve')
+        self.new_profile=Profile(id=2,bio='passion',profile_pic='pic.jpg',full_name='SteveNderitu', user=self.new_user, email='stevenderitu@gmail.com', phone_number='0708290960')
+
+
+    def test_instance(self): 
+        self.assertTrue(isinstance(self.new_profile,Profile))  
+        self.assertTrue(isinstance(self.new_user,User))
+    
+
+    def test_save_profile(self):
+        self.new_profile.save_profile()
+        profiles=Profile.objects.all()
+        self.assertTrue(len(profiles)>0)
+
+
+    def tearDown(self):
+        Profile.objects.all().delete()
+    
+    
+    def test_delete_profile(self):
+        self.new_profile.delete_profile()
+        self.assertEqual(len(Profile.objects.all()),0)
+
+
 
  
