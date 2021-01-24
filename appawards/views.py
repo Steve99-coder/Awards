@@ -97,5 +97,14 @@ def new_comment(request, project_id):
 
     return render(request, 'users/new_comment.html', {'form': form,'profile':profile, 'project':project, 'project_id':project_id})
 
+@login_required(login_url='/accounts/login/')
+def user_profile(request):
+    current_user = request.user
+    projects = Project.objects.filter(user=current_user).all()
+    user_profile = Profile.objects.filter(user=current_user.id).first()
+    
+
+    return render(request, 'users/user_profile.html', { 'user_profile':user_profile,'projects':projects})
+
 
 
