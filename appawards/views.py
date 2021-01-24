@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Profile,Project,Comment
+from django.db.models import Max,F
 import datetime as dt
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -9,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .serializer import ProfileSerializer,ProjectSerializer
+from django.http  import HttpResponse,Http404,HttpResponseRedirect
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
