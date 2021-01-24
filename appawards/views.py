@@ -8,6 +8,7 @@ from .forms import NewProfileForm,NewProjectForm,VoteForm,NewCommentForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from .serializer import ProfileSerializer,ProjectSerializer
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
