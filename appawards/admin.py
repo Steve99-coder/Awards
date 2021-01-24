@@ -6,7 +6,7 @@ from .models import User
 
 # Register your models here.
 class UserAdmin(AuthUserAdmin):
-    add_form = MyUserCreationForm
+    add_form = UserCreationForm
     update_form_class = UserChangeForm
 
 class MyUserCreationForm(UserCreationForm):

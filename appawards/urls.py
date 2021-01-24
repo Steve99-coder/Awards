@@ -20,3 +20,6 @@ urlpatterns=[
     url(r'^api/project/$', views.ProjectList.as_view(), name='project-API'),
     
 ]
+
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
