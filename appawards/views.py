@@ -135,5 +135,11 @@ def edit_profile(request):
 
     return render(request, 'users/edit_profile.html', {'form':form,})
 
+class ProfileList(APIView):
+    def get(self, request, format=None):
+        all_profile = Profile.objects.all()
+        serializers = ProfileSerializer(all_profile, many=True)
+        return Response(serializers.data)
+
 
 
