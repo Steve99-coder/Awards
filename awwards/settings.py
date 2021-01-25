@@ -84,14 +84,14 @@ WSGI_APPLICATION = 'awwards.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'awards',
-        'USER': 'steve',
-    'PASSWORD':'steve@12345',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'awards',
+#         'USER': 'steve',
+#     'PASSWORD':'steve@12345',
+#     }
+# }
 
 
 # Password validation
