@@ -1,9 +1,9 @@
-# Gallery 
+# Awards
 
 #### Author: [Stephen Nderitu](https://github.com/Steve99-coder/Awards)
 
 
-* Link to live site: [S-Awards]()
+* Link to live site: [S-Awards](https://blooming-tor-03493.herokuapp.com/)
 
 ## Description
 This is an awards app that users can be able to post a project he/she has created and get it reviewed by his/her peers.
